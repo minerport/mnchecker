@@ -504,8 +504,9 @@ class Wallet(object):
 		# Catch the wallet taking the way out because the daemon isn't running.
 		if stderrString.decode().strip() == "error: couldn't connect to server":
 			print("[DEBUG Wallet.runCliSafe WalletError: ]", WalletError.__dict__)
+			self.startDaemon(["-reindex"])
 			raise WalletError(\
-				"Command line wallet can't connect to the daemon. Is the daemon running?\n{info}"\
+				"Command line wallet can't connect to the daemon. Will try to restart the daemon...\n{info}"\
 				.format(info="Wallet paths:\n\tcli: {cli}\n\tdaemon: {daemon}\n\tdatadir: {datadir}"\
 					.format(cli=self.cliBinPath, daemon=self.daemonBinPath, datadir=self.dataDirPath)),\
 				WalletError.codes.RPC_CONNECTION_FAILED)
