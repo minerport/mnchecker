@@ -50,8 +50,8 @@ userDirName = ".mnchecker"
 #==========================================================
 # Currency defaults
 defaultCurrencyHandle = "moondex"
-defaultCliBin = os.path.join(os.path.abspath(os.path.expanduser("~")), "moondex/moondex-cli")
-defaultDaemonBin = os.path.join(os.path.abspath(os.path.expanduser("~")), "moondex/moondexd")
+defaultCliBin = os.path.join(os.path.abspath(os.path.expanduser("~")), "/usr/local/bin/moondex-cli")
+defaultDaemonBin = os.path.join(os.path.abspath(os.path.expanduser("~")), "/usr/local/bin/moondexd")
 defaultDataDir = os.path.join(os.path.abspath(os.path.expanduser("~")), ".moondexcore")
 
 #==========================================================
